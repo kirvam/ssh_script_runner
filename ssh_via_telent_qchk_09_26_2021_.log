@@ -1,0 +1,288 @@
+$VAR1 = [
+          'phaigh_"V22osprey!!!"_10.251.16.21_',
+          'infradmin_"V22osprey!!!"_10.251.7.132_Ubuntu',
+          'infradmin_"Eag-dev02-truck-pear-tiger!"_10.251.7.133_Ubuntu',
+          'infradmin_"Eag-dev02-truck-pear-tiger!"_10.251.7.5_',
+          'infradmin_"Eag-dev02-truck-pear-tiger!"_10.251.7.4_Centos',
+          'infradmin_"Eag-dev02-truck-pear-tiger!"_10.251.8.4_Centos',
+          'infradmin_"Eag-dev02-truck-pear-tiger!"_10.251.8.5_Centos',
+          'infradmin_"Eag-dev02-truck-pear-tiger!"_10.251.2.4_Centos',
+          'infradmin_"V22osprey!!!"_10.251.149.53_Centos',
+          'infradmin_"V22osprey!!!"_10.251.8.4_Centos',
+          'infradmin_"V22osprey!!!"_10.251.8.5_Centos',
+          'infradmin_"V22osprey!!!"_10.251.147.5_Centos',
+          'infradmin_"V22osprey!!!"_10.251.4.6_Centos',
+          'infradmin_"V22osprey!!!"_10.251.163.36_Centos',
+          'infradmin_"V22osprey!!!"_10.251.147.5_Centos',
+          'infradmin_"V22osprey!!!"_10.251.44.36_Centos',
+          'infradmin_"V22osprey!!!"_10.251.44.37_Centos',
+          'infradmin_"V22osprey!!!"_10.251.131.68_Centos',
+          'infradmin_"V22osprey!!!"_10.251.162.4_Centos',
+          'infradmin_"V22osprey!!!"_10.251.52.4_Centos',
+          'infradmin_"V22osprey!!!"_10.251.21.232_Centos',
+          'phaigh_"v22osprey"_10.216.13.98_Centos',
+          'infradmin_"v22osprey!!!"_10.251.53.36_Centos',
+          'infradmin_"v22osprey!!!"_10.251.53.37_Centos',
+          'infradmin_"V22osprey!!!"_10.251.10.68_Centos',
+          'infradmin_"V22osprey!!!"_10.251.57.4_Centos'
+        ];
+--- start ---
+--Start process_aref--
+--------------------------------------------------
+---< Process ^omi_check^ script. >---
+
+infradmin|"V22osprey!!!"|10.251.7.132|
+===============< 10.251.7.132 >======================
+CONNECT: infradmin, V22osprey!!!,10.251.7.132,
+
+TRYING to Connect: 10.251.7.132
+Running: _ssh_mk_dir
+$login_output:
+^ 
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1021-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Sep 26 19:22:06 UTC 2021
+
+  System load:  0.0                Processes:              116
+  Usage of /:   52.8% of 28.90GB   Users logged in:        0
+  Memory usage: 30%                IP address for eth0:    10.251.7.132
+  Swap usage:   0%                 IP address for docker0: 172.17.0.1
+
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+157 packages can be updated.
+1 update is a security update.
+
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+
+*** System restart required ***
+Last login: Sun Sep 26 19:12:32 2021 from 10.80.80.15
+infradmin@dmz-web01:~$ ^
+
+---< Command Output >---
+
+	mkdir: cannot create directory ‘omi_check’: File exists
+infradmin@dmz-web01:~$ 
+	infradmin@dmz-web01:~/omi_check$ 
+	$pwd:
+	/home/infradmin/omi_check
+infradmin@dmz-web01:~/omi_check$ 
+
+---<end>---
+Running: _ssh_scp
+	Sending file: omi_checker.sh
+Sent [1] files.
+Running: _ssh_cmd
+fRiday_omi_check.log,omi_checker.sh,omi_check,infradmin,V22osprey!!!,10.251.7.132,
+	==$login_output:
+^ 
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1021-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Sep 26 19:23:03 UTC 2021
+
+  System load:  0.08               Processes:              116
+  Usage of /:   52.8% of 28.90GB   Users logged in:        0
+  Memory usage: 30%                IP address for eth0:    10.251.7.132
+  Swap usage:   0%                 IP address for docker0: 172.17.0.1
+
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+157 packages can be updated.
+1 update is a security update.
+
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+
+*** System restart required ***
+Last login: Sun Sep 26 19:22:06 2021 from 10.80.80.15
+infradmin@dmz-web01:~$ ^
+
+---< Command Output >---
+
+	==$cd: ^infradmin@dmz-web01:~/omi_check$ ^
+	==$pwd:
+	^/home/infradmin/omi_check
+infradmin@dmz-web01:~/omi_check$ ^
+
+	++$ls:
+	^total 8
+-rwxrw-r-- 1 infradmin infradmin 1473 Sep 26 19:23 [0m[01;32momi_checker.sh[0m
+-rw-r--r-- 1 root      root       147 Sep 26 19:14 fRiday_omi_check.log
+infradmin@dmz-web01:~/omi_check$ ^
+
+	==$sudo: ^root@dmz-web01:/home/infradmin/omi_check# ^
+
+	==$whoami: ^V22ospreycat fRiday_omi_check.log!
+V22ospreycat: command not found
+root@dmz-web01:/home/infradmin/omi_check# root
+root@dmz-web01:/home/infradmin/omi_check# ^
+
+	==$fal_perm: ^root@dmz-web01:/home/infradmin/omi_check# , ^
+	==$fal_ls: ^-rwxrw-r-- 1 infradmin infradmin 1473 Sep 26 19:23 [0m[01;32momi_checker.sh[0m
+root@dmz-web01:/home/infradmin/omi_check# ^
+
+	==$fal_chk_os: ^[01;31m[KNAME="Ubuntu"[m[K
+root@dmz-web01:/home/infradmin/omi_check# , ^
+	==
+====OS = Ubuntu
+====Running /bin/bash omi_checker.sh
+## ====$result = ^^ ## 
+	====$line: ^N# 10.251.7.132, dmz-web01, omi NOT found!^
+## LINE====Looks like Failure! 
+## LINE====push to @failures, 10.251.7.132..
+## NO PUSH
+	====$line: ^ ^
+## LINE====Looks like Failure! 
+## LINE====push to @failures, 10.251.7.132..
+## NO PUSH
+$log: fRiday_omi_check.log
+
+######<LOG SNIP>######
+root@dmz-web01:/home/infradmin/omi_check# --- starting log: fRiday_omi_check.log ---
+NAME="Ubuntu"
+
+Result of search: ^^
+
+###EC##N# 10.251.7.132, dmz-web01, omi NOT found!
+--- finished ---
+root@dmz-web01:/home/infradmin/omi_check# 
+######<LOG SNIP>######
+
+## CAT====Looks like Failure! 
+## CAT====push to @failures, 10.251.7.132.infradminV22osprey!!!.
+---< finished omi_checker.sh >---
+infradmin|"Eag-dev02-truck-pear-tiger!"|10.251.7.133|
+===============< 10.251.7.133 >======================
+CONNECT: infradmin, Eag-dev02-truck-pear-tiger!,10.251.7.133,
+
+TRYING to Connect: 10.251.7.133
+Running: _ssh_mk_dir
+$login_output:
+^ 
+Permission denied, please try again.
+infradmin@10.251.7.133's password: ^
+
+10.251.7.133,Password BAD, Bailing -NEXT!
+infradmin|"Eag-dev02-truck-pear-tiger!"|10.251.2.4|Centos
+===============< 10.251.2.4 >======================
+CONNECT: infradmin, Eag-dev02-truck-pear-tiger!,10.251.2.4,Centos
+
+TRYING to Connect: 10.251.2.4
+Running: _ssh_mk_dir
+$login_output:
+^ 
+Last login: Sun Sep 26 19:16:14 2021 from 10.80.80.15
+kinfradmin@stg-web01dkrweb0:~\[infradmin@stg-web01dkrweb0 ~]$ ^
+
+---< Command Output >---
+
+	mkdir: cannot create directory ‘omi_check’: File exists
+kinfradmin@stg-web01dkrweb0:~\[infradmin@stg-web01dkrweb0 ~]$ 
+	kinfradmin@stg-web01dkrweb0:~/omi_check\[infradmin@stg-web01dkrweb0 omi_check]$ 
+	$pwd:
+	/home/infradmin/omi_check
+kinfradmin@stg-web01dkrweb0:~/omi_check\[infradmin@stg-web01dkrweb0 omi_check]$ 
+
+---<end>---
+Running: _ssh_scp
+	Sending file: omi_checker.sh
+Sent [1] files.
+Running: _ssh_cmd
+fRiday_omi_check.log,omi_checker.sh,omi_check,infradmin,Eag-dev02-truck-pear-tiger!,10.251.2.4,Centos
+	==$login_output:
+^ 
+Last login: Sun Sep 26 19:25:48 2021 from 10.80.80.15
+kinfradmin@stg-web01dkrweb0:~\[infradmin@stg-web01dkrweb0 ~]$ ^
+
+---< Command Output >---
+
+	==$cd: ^kinfradmin@stg-web01dkrweb0:~/omi_check\[infradmin@stg-web01dkrweb0 omi_check]$ ^
+	==$pwd:
+	^/home/infradmin/omi_check
+kinfradmin@stg-web01dkrweb0:~/omi_check\[infradmin@stg-web01dkrweb0 omi_check]$ ^
+
+	++$ls:
+	^total 8
+-rwxrw-r--. 1 infradmin infradmin 1473 Sep 26 19:26 [0m[01;32momi_checker.sh[0m
+-rw-r--r--. 1 root      root       175 Sep 26 19:17 fRiday_omi_check.log
+kinfradmin@stg-web01dkrweb0:~/omi_check\[infradmin@stg-web01dkrweb0 omi_check]$ ^
+
+	==$sudo: ^[sudo] password for infradmin: ^
+
+	==$whoami: ^
+kroot@stg-web01dkrweb0:/home/infradmin/omi_check\[root@stg-web01dkrweb0 omi_check]# ^
+
+	==$fal_perm: ^kroot@stg-web01dkrweb0:/home/infradmin/omi_check\[root@stg-web01dkrweb0 omi_check]# , ^
+	==$fal_ls: ^-rwxrw-r--. 1 infradmin infradmin 1473 Sep 26 19:26 [0m[01;32momi_checker.sh[0m
+kroot@stg-web01dkrweb0:/home/infradmin/omi_check\[root@stg-web01dkrweb0 omi_check]# ^
+
+	==$fal_chk_os: ^kroot@stg-web01dkrweb0:/home/infradmin/omi_check\[root@stg-web01dkrweb0 omi_check]# , ^
+	==
+====OS appears to NOT be Ubuntu.
+====Running /usr/bin/bash omi_checker.sh
+## ====$result = ^^ ## 
+	====$line: ^N# 10.251.2.4, stg-web01dkrweb0, omi NOT found!^
+## LINE====Looks like Failure! 
+## LINE====push to @failures, 10.251.2.4..
+## NO PUSH
+	====$line: ^ ^
+## LINE====Looks like Failure! 
+## LINE====push to @failures, 10.251.2.4..
+## NO PUSH
+$log: fRiday_omi_check.log
+
+######<LOG SNIP>######
+kroot@stg-web01dkrweb0:/home/infradmin/omi_check\[root@stg-web01dkrweb0 omi_check]# --- starting log: fRiday_omi_check.log ---
+
+CentOS Linux release 7.7.1908 (Core)
+Result of search: ^^
+
+###EC##N# 10.251.2.4, stg-web01dkrweb0, omi NOT found!
+--- finished ---
+kroot@stg-web01dkrweb0:/home/infradmin/omi_check\[root@stg-web01dkrweb0 omi_check]# 
+######<LOG SNIP>######
+
+## CAT====Looks like Failure! 
+## CAT====push to @failures, 10.251.2.4.infradminEag-dev02-truck-pear-tiger!Centos.
+---< finished omi_checker.sh >---
+--Finish process_aref--
+
+==Dump @failures==
+Dumper @failures
+--------------------------------------------------
+---< Failures >---
+
+1: 10.251.7.132,infradmin,V22osprey!!!,,
+2: 10.251.2.4,infradmin,Eag-dev02-truck-pear-tiger!,Centos,
+
+--------------------------------------------------
+---< Failed Logins >---
+
+1: 10.251.7.133,infradmin,Eag-dev02-truck-pear-tiger!,,Password BAD,Bailing -NEXT!
+
+--------------------------------------------------
+---< Success - with omi_check >---
+
+
+--- end ---

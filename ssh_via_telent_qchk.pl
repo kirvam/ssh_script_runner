@@ -10,6 +10,7 @@ my @files = ("omi_checker.sh",
 # Array to catch all failures:
 my @failures = ();
 my @failed_logins = ();
+my @success = ();
 ###
 
 
@@ -71,14 +72,17 @@ process_aref($success_messages,$title,$log,$dir,$cmd,@files);
 #     print "$ct: ${$failed_messages}[$ii]\n";
 #}
 print "\n";
-print "==Dump \@failures==\n";
-print "Dumper \@failures";
-print "\n";
+#print "==Dump \@failures==\n";
+#print Dumper \@failures;
+#print "\n";
 my $failures = \@failures;
 print_aref($failures,"Failures");
 print "\n";
 my $failed_logins = \@failed_logins;
 print_aref($failed_logins,"Failed Logins");
+print "\n";
+my $success = \@success;
+print_aref($success,"Success - with $dir");
 print "\n";
 print "--- end ---\n";
 exit;
@@ -332,6 +336,7 @@ if( $cat =~ m/(###EC##Y#*)/ig ) {
      $resp = $1;
      print "====\$resp: $resp\n";
      chomp($resp);
+     push @success, $host.",$user,$pass,$os,".$resp;
      } else {
      $resp = $1;
      print "## CAT====Looks like Failure! \n";
