@@ -1,0 +1,113 @@
+use strict;
+use Data::Dumper;
+
+#my $command = "adb shell cd /data/app; ./iperf -u -s -p 5001";
+
+my @array = ( '10.251.43.167', '10.251.3.76', '10.251.43.199', '10.251.43.198', '10.251.3.76');
+
+my @data =();
+# build Array
+while (<DATA>){
+      chomp;
+      my $line = $_;
+      #1: 7: EAG-DEV01, STG-WRK00, WindowsServer, 10.251.7.6, -Failed ping test, 0 received, 100% packet
+      my($ct,$ct_org_list,$sub,$name,$os,$ip,$failed_msg,$rec,$ploss) = split(/\,\s\s*|\:\s\s*/,$line);
+      my $item = $sub."_".$name."_".$os."_".$ip;
+   #   print "^$item^\n"; 
+      push @data, $item;
+};
+
+#print Dumper \@data;
+
+
+my @array = @data;
+
+
+#my $cmd = "telnet 10.251.43.167 3389";
+my $cmd;
+
+print "--- start ---\n";
+my(@messages) = _check_vm_with_telnet_(@array);
+
+print "-"x50;
+print "\n";
+foreach my $ii ( 0 .. $#messages ){
+     my $ct = $ii + 1;
+     print "$ct: $messages[$ii]\n";
+}
+
+print "\n";
+print "--- end ---\n";
+
+
+# SUBS
+sub _check_vm_with_telnet_{
+my(@array) = @_;
+my $port = "22";
+my @messages;
+my $pass; 
+
+foreach my $ii ( 0 .. $#array ){
+ print "== processing $array[$ii]\n";
+ my($sub,$name,$os,$ip) = split(/_/,$array[$ii]);
+ my $vm_string = join(",",$sub,$name,$os,$ip);
+ $pass = 0;
+ #my $telnet = "telnet ".$array[$ii]." ".$port;
+ my $telnet = "telnet ".$ip." ".$port;
+ $cmd = $telnet;
+ print "== $telnet \n";
+  my @output;
+  my $pipe = ();
+  my $data;
+eval {
+    local $SIG{ALRM} = sub { die "Timeout\n" };
+    alarm 5;
+    #@output = `$cmd`;
+    open( $pipe, "$telnet |" ) or die "Flaming death on open of pipe ^$cmd^: $!\n";
+    #open( $pipe, "/usr/bin/ls -1 |" ) or die "Flaming death on open of pipe ^$cmd^: $!\n";
+
+    while(<$pipe>){ 
+            chomp; 
+            print "\$_: $_\n"; 
+            $data .= $_; 
+               if ( $_ =~ m/(connected)/ig ){ print "-Connected -Pass!\t\t\t\t -Pass!\n"; $pass = 1;
+                    }  
+                     elsif ( $pass eq 0 && $_ !~ m/(trying)/ig ) { print "^$_^\n"; print "$array[$ii] -FAILED!\n"; push @messages, "$array[$ii] -FAILED"; 
+                       } else {
+                         print "^$_^\n";
+                         
+                     };
+                  };
+    alarm 0;
+};
+if ( $pass eq 0 ){ print "^$_^\n"; print "$vm_string -FAILED!\n"; push @messages, "$array[$ii] -FAILED"; };
+
+if ($@) {
+    warn "$cmd timed out.\n";
+    my $pid = `ps | grep telnet`;
+    print "$pid\n";
+    my @pid = split(/\s\s*|\t\t*/,$pid);
+    my $cmd = "kill -9 $pid[0]";
+    print "$cmd\n";
+    `$cmd`;
+    #print "$data\n";
+
+} else {
+    #print "$cmd successful. Output was:\n", @output;
+    print "##$cmd successful. Output was:\n", $data;
+
+  }
+
+ };
+
+## totals?
+return(@messages);
+};
+
+
+
+
+__DATA__
+3: 11: VDOL, vdol01-vm, Oracle-Linux, 10.251.44.37, -Failed ping test, 0 received, 100% packet
+15: 76: EAG-BUILD-TEST, eag-mxnet-vm, ubuntu-16-04-minimal-lts-cm, 10.251.51.4, -Failed ping test, 0 received, 100% packet
+36: 118: AOT-CVO-Cloud, EAG-LIN-STG1, CentOS, 10.251.0.77, -Failed ping test, 0 received, 100% packet
