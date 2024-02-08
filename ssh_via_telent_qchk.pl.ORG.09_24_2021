@@ -108,6 +108,4 @@ return(@messages);
 
 
 __DATA__
-3: 11: VDOL, vdol01-vm, Oracle-Linux, 10.251.44.37, -Failed ping test, 0 received, 100% packet
-15: 76: EAG-BUILD-TEST, eag-mxnet-vm, ubuntu-16-04-minimal-lts-cm, 10.251.51.4, -Failed ping test, 0 received, 100% packet
-36: 118: AOT-CVO-Cloud, EAG-LIN-STG1, CentOS, 10.251.0.77, -Failed ping test, 0 received, 100% packet
+
