@@ -347,34 +347,3 @@ $ssh->close();
 
 
 #__DATA__
-#3: 11: VDOL, vdol01-vm, Oracle-Linux, 10.251.44.37, -Failed ping test, 0 received, 100% packet
-#3: 11: VDOL, test-vm, Oracle-Linux, 10.251.16.4, -Failed ping test, 0 received, 100% packet
-#15: 76: EAG-BUILD-TEST, eag-mxnet-vm, ubuntu-16-04-minimal-lts-cm, 10.251.51.4, -Failed ping test, 0 received, 100% packet
-#36: 118: AOT-CVO-Cloud, EAG-LIN-STG1, CentOS, 10.251.0.77, -Failed ping test, 0 received, 100% packet
-__DATA__
-phaigh,"V22osprey!!!",10.251.16.21
-infradmin,"V22osprey!!!",10.251.7.132,Ubuntu
-infradmin,"Eag-dev02-truck-pear-tiger!",10.251.7.133,Ubuntu
-infradmin,"Eag-dev02-truck-pear-tiger!",10.251.7.5
-infradmin,"Eag-dev02-truck-pear-tiger!",10.251.7.4,Centos,
-infradmin,"Eag-dev02-truck-pear-tiger!",10.251.8.4,Centos,
-infradmin,"Eag-dev02-truck-pear-tiger!",10.251.8.5,Centos,
-infradmin,"Eag-dev02-truck-pear-tiger!",10.251.2.4,Centos,
-infradmin,"V22osprey!!!",10.251.149.53,Centos,
-infradmin,"V22osprey!!!",10.251.8.4,Centos,
-infradmin,"V22osprey!!!",10.251.8.5,Centos,
-infradmin,"V22osprey!!!",10.251.147.5,Centos,
-infradmin,"V22osprey!!!",10.251.4.6,Centos,
-infradmin,"V22osprey!!!",10.251.163.36,Centos,
-infradmin,"V22osprey!!!",10.251.147.5,Centos,
-infradmin,"V22osprey!!!",10.251.44.36,Centos,
-infradmin,"V22osprey!!!",10.251.44.37,Centos,
-infradmin,"V22osprey!!!",10.251.131.68,Centos,
-infradmin,"V22osprey!!!",10.251.162.4,Centos,
-infradmin,"V22osprey!!!",10.251.52.4,Centos,
-infradmin,"V22osprey!!!",10.251.21.232,Centos,
-phaigh,"v22osprey",10.216.13.98,Centos
-infradmin,"v22osprey!!!",10.251.53.36,Centos
-infradmin,"v22osprey!!!",10.251.53.37,Centos
-infradmin,"V22osprey!!!",10.251.10.68,Centos
-infradmin,"V22osprey!!!",10.251.57.4,Centos
